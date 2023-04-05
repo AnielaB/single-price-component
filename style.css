@@ -1,0 +1,169 @@
+:root{
+    --cyan: hsl(179, 62%, 43%);     
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+}
+
+/* TYPOGRAPHY */
+body{
+    font-family: 'Karla', sans-serif;
+    font-size: 100%;
+    background-color: var(--light-gray);
+    color: var(--white);
+    display: grid;
+    place-content: center;
+}
+
+.card{
+    max-width: 370px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 8px 8px 24px 0px rgba(169, 170, 177, 0.32);
+}
+
+.card__comunity,
+.card__subscription,
+.card__why-us{
+    padding: 1.5em;
+}
+
+.card__comunity h1,
+.card__comunity h2,
+.card__why-us h2{
+    margin-bottom: 0.8em;  
+}
+
+.card__comunity{
+    background-color: var(--white);
+    color: var(--grayish-blue);
+}
+
+.card__subscription{
+    background-color: var(--cyan); 
+}
+
+.card__why-us{
+    background-color: hsla(179, 62%, 43%, 0.795);   
+}
+
+.card__comunity h1{
+    color: var(--cyan);
+    font-size: 1.4rem;
+}
+
+.card__comunity h2{
+    color: var(--bright-yellow);
+    font-size: 1.1rem;
+}
+
+.card__subscription h2{
+    font-size: 1.4rem;
+    margin-bottom: 0.5em;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flex .price{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.flex .month{
+    color: var(--light-gray);
+    font-weight: 200;
+}
+
+.text{
+    margin-bottom: 1.6em;
+}
+
+.btn{
+    background-color: var(--bright-yellow);
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8em 0;
+    color: var(--white);
+    font-weight: 700;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 0.32);
+}
+
+.card__why-us h2{
+    font-size: 1.4rem;  
+}
+
+.card__why-us p{
+    max-width: 80%;
+    font-weight: 200;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 700px){
+    .card{
+        max-width: 800px; 
+        margin-inline: 1rem;
+        display: grid;
+        grid-template: 
+        "hero hero" auto
+        "second third" auto / 1fr 1fr
+    }
+    .card__comunity{
+        grid-area: hero;
+    }
+    .card__subscription{
+        grid-area: second;
+    }
+    .card__why-us{
+        grid-area: third;
+    }
+    .card__comunity,
+    .card__subscription,
+    .card__why-us{
+        padding: 3em;
+}
+}
+
+
+
